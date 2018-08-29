@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html --open",
+    "start": "npm run build && node index.js",
+    "serve": "parcel index.html --open",
     "build": "parcel build index.html"
   },
   "dependencies": {
     "components": "^0.1.0",
+    "express": "^4.16.3",
+    "http-server": "^0.11.1",
     "react": "16.2.0",
     "react-dom": "16.2.0"
   },
