@@ -50,6 +50,28 @@ export default class Questionnaire extends Component {
         </div>
 
         <div className={ this.state.stage === 'result' ? 'ChartWrapper' : 'Hidden' }>
+          <div className={'ChartExplanation'}>
+            <h2>What does this chart mean?</h2>
+            <p>
+              The chart shows an image of the person you filled out the questionnaire for.
+              This image shows where this person is on three different scales:
+
+              <ol>
+                <li>
+                  <strong>Dominance vs Submisiveness</strong>
+                  The position in this scale can be derived from the size of the image, or in other words; the radius of the circle.
+                </li>
+                <li>
+                  <strong>Friendly(P) vs Unfriendly behavior(N)</strong>
+                  The position in this scale can de derived from the position on the X axis.
+                </li>
+                <li>
+                  <strong>Accepting(F) vs Rejecting task-orientation of established authority(B)</strong>
+                  The position in this scale can de derived from the position on the Y axis.
+                </li>
+              </ol>
+            </p>
+          </div>
           <Chart stage={ this.state.stage } />
         </div>
 

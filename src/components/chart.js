@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Questions from './../assets/questions';
 
+import "./../styles/chart.scss";
+
 export default class Chart extends Component {
 
   constructor(props) {

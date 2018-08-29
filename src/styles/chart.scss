@@ -1,0 +1,129 @@
+.ChartWrapper {
+  display: flex;
+  align-items: center;
+  width: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .ChartExplanation {
+    padding-right: 25px;
+
+    h2 {
+      margin-top: 0;
+      font-family: 'Roboto Slab', serif;
+      font-size: 32px; 
+    }
+
+    p {
+      margin-bottom: 0;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+      color: #969696;
+    }
+
+    ol {
+      margin: 15px 0 0 0;
+      padding: 0 0 0 15px;
+
+      li {
+        margin-top: 10px;
+
+        strong {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .labels {
+    position: relative;
+    font-family: sans-serif;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      height: 458px;
+      align-items: center;
+      content: "N"
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      height: 458px;
+      align-items: center;
+      content: "P"
+    }
+  }
+
+  #graph {
+    position: relative;
+    width: 360px;
+    height: 360px;
+    border: 2px solid #000;
+
+    .personImage {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+      border: 1px solid #000;
+      border-radius: 50%;
+    }
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 360px;
+      height: 2px;
+      background: #000;
+      content: "";
+    }
+
+    &:before {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 360px;
+      background: #000;
+      content: "";
+    }
+  }
+
+  $lines: 36;
+  @for $i from 0 to $lines {
+    .barPair:nth-child(#{$i + 1}) .horLine {
+      position: absolute;
+      top: $i * 10px;
+      left: 0;
+      width: 360px;
+      height: 1px;
+      background: #ccc;
+    }
+
+    .barPair:nth-child(#{$i + 1}) .vertLine {
+      position: absolute;
+      top: 0;
+      left: $i * 10px;
+      width: 1px;
+      height: 360px;
+      background: #ccc;
+    }
+  }
+
+  .Hidden {
+    display: none;
+  }
+}

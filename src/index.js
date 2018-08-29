@@ -3,8 +3,6 @@ import { render } from "react-dom";
 import Chart from './components/chart';
 import Questionnaire from './components/questionnaire'
 
-import "./styles.scss";
-
 class App extends Component {
 
   constructor(props) {
