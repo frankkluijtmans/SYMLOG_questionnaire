@@ -4,20 +4,20 @@ import "./../styles/controls.scss";
 
 export default class Prev extends Component {
 
-  constructor(props) {
+	constructor(props) {
 
-    super(props);
-  };
+		super(props);
+	};
 
-  render() {
-    return(
-      <div 
-        onClick={ this.props.clickhandler }
-        className={ 'Control Prev' }
-      >
-        &lt; Previous
-      </div>
-    )
-  };
+	render() {
+		return(
+			<div 
+				onClick={ this.props.clickhandler }
+				className={ 'Control Prev' }
+			>
+				&lt; Previous
+			</div>
+		)
+	};
 
 }
