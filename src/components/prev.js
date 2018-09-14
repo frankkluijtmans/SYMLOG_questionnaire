@@ -7,6 +7,14 @@ export default class Prev extends Component {
 	constructor(props) {
 
 		super(props);
+
+		document.addEventListener('keydown', (event) => {
+
+			if(event.which === 37) {
+
+				this.props.clickhandler();
+			}
+		});
 	};
 
 	render() {

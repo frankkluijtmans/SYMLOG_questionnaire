@@ -13,6 +13,14 @@ export default class Next extends Component {
 			
 			this.forceUpdate();
 		});
+
+		document.addEventListener('keydown', (event) => {
+
+			if(event.which === 39) {
+
+				this.props.clickhandler();
+			}
+		});
 	};
 
 	render() {
