@@ -21,48 +21,8 @@ export default class Chart extends Component {
 				this.buildImage(Questions.data)
 			];
 
-			this.sendResult(this.data);
 			this.forceUpdate();
 		}
-	}
-
-	sendResult(data) {
-		
-		data[0].assessor = this.getAssessorName();
-
-		axios.get('https://api.jsonbin.io/b/5b9a7a5420f1643378588178/latest', {
-			headers: {
-				"secret-key": "$2a$10$zg.bb9pSIC6P83qx/RbiKeefHw.RlpPjn2PGjeAbxrW4y.X5RwaK2"
-			}
-		}).then(response => {
-
-			let binData = response.data.data;		
-			binData.results.push(data[0]);
-
-			axios.put('https://api.jsonbin.io/b/5b9a7a5420f1643378588178', {
-				data: binData
-			},
-			{
-				headers: {
-					"Content-Type": "application/json",
-					"secret-key": "$2a$10$zg.bb9pSIC6P83qx/RbiKeefHw.RlpPjn2PGjeAbxrW4y.X5RwaK2",
-					"versioning": "true"
-				}
-			});
-		});
-	}
-
-	getAssessorName() {
-
-		const url = new URL(window.location);
-		let name = url.searchParams.get("name");
-
-		if(name === null) {
-
-			name = 'Unknown';
-		}
-
-		return name;
 	}
 
 	buildImage(questions) {
